@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		.box {
+			width: 1210px;
+			height: 400px;
+			margin: 100px auto;
+			display: flex;
+			
+		}
+		.picture {
+			
+			width: 200px;
+			position: relative;
+			margin-right: 20px;
+		}
+		.pic_f{
+			position: absolute;
+			top: 0;
+			left: 0;
+			backface-visibility: hidden;
+		}
+		.pic_b{
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: rotateY(180deg);
+			backface-visibility: hidden;
+		}
+		.pic_f,.pic_b {
+			transition: all 1s;
+		}
+		.picture:hover .pic_f {
+			transform: rotateY(180deg);
+		}
+		.picture:hover .pic_b{
+			
+			transform: rotateY(0deg);
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box">
+		<div class="picture">
+				<a href="#" class="pic_f"><img src="images/card6.png" alt=""></a>
+				<a href="#" class="pic_b"><img src="images/card6-back.png" alt=""></a>
+		</div>
+
+		<div class="picture">
+				<a href="#" class="pic_f"><img src="images/card7.png" alt=""></a>
+				<a href="#" class="pic_b"><img src="images/card7-back.png" alt=""></a>
+		</div>
+		<div class="picture">
+				<a href="#" class="pic_f"><img src="images/card8.png" alt=""></a>
+				<a href="#" class="pic_b"><img src="images/card8-back.png" alt=""></a>
+		</div>
+		<div class="picture">
+				<a href="#" class="pic_f"><img src="images/card9.png" alt=""></a>
+				<a href="#" class="pic_b"><img src="images/card9-back.png" alt=""></a>
+		</div>
+		<div class="picture">
+				<a href="#" class="pic_f"><img src="images/card10.png" alt=""></a>
+				<a href="#" class="pic_b"><img src="images/card10-back.png" alt=""></a>
+		</div>
+
+		
+	</div>
+
+	
+</body>
+</html>

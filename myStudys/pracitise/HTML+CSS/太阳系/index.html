@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .sun {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 30px 3px red;
+        }
+        .earth {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+            animation: rot 6s infinite linear;
+        }
+        .earth::after {
+            content: "";
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: blue;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+        }
+        .mon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+            animation: rot 9s infinite linear;
+        }
+        .water {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+            animation: rot 5s infinite linear;
+        }
+        .water::after {
+            content: "";
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: green;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+        }
+        .fire {
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+            animation: rot 10s infinite linear;
+        }
+        .fire::after {
+            content: "";
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: deeppink;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            /*居中*/
+            transform: translate(-50%,-50%);
+        }
+        @keyframes rot {
+            0%{
+                transform: translate(-50%,-50%) rotate(0deg);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div class="earth">
+        <div class="mon"></div>
+    </div>
+    <div class="water"></div>
+    <div class="fire"></div>
+</body>
+</html>

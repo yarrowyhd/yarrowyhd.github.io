@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			text-decoration: none;
+		}
+		.w {
+			width: 1000px;
+			margin: 0 auto;
+		}
+
+		.mask {	
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			position: fixed;
+			z-index: 111;
+			display: none;
+		}
+		.menuAll {
+			width: 100%;
+			height: 520px;
+			background-color: pink;
+			display: none;
+			position: fixed;
+			top: 30px;
+			left: 0;
+			z-index: 111111;
+		}
+		
+		.menuAll_l {
+			float: left;
+			width: 37%;
+			
+		}
+		.menuAll_l a {
+			color: #fff;
+			font-size: 20px;
+		}
+		.menuAll_l ul {
+			border-right: 6px solid #666;
+			margin-right: 3%;
+		}
+		.menuAll_l li {
+			padding: 30px 10px;
+		}
+		
+		.menuAll_l li:hover {
+			background-color: #ccc;
+		}
+		
+		.menuAll_r {
+			float: right;
+			width: 60%;
+		}
+
+		.menuAll_r li {
+			float: left;
+			padding: 33px 2px;
+		}
+		.menuAll_r a {
+			color: #fff;
+		}
+
+		.main {
+			width: 100%;
+			margin-top: 30px;
+		}
+		.main_title {
+			width: 100%;
+			height: 120px;
+			position: relative;
+			background-color: #fff;
+		}
+		.main_title hr {
+			margin-top: 30px;
+			background-color: #ccc;
+			height: 3px;
+		}
+		.main_title span {
+			display: block;
+			text-align: center;
+			position: absolute;
+			line-height: 30px;
+			width: 200px;
+			height: 60px;
+			background-color: #fff;
+			top: 20px;
+			left: 50%;
+			font-size: 20px;
+			margin-left: -100px;
+		}
+		.main_mid {
+			width: 100%;
+			height: 150px;
+			margin: 40px 0;
+			
+		}
+		.main_mid img {
+			float: left;
+			width: 30%;
+			height: 100%;
+			margin-right: 3%;
+		}
+		.artical {
+			float: right;
+			width: 67%;
+			height: 150px;
+			position: relative;
+			
+		}
+		.main_mid .artical p {
+			margin-top: 10px;
+			line-height: 30px;
+		}
+		.main_mid .artical span {
+			display: block;
+			width: 100px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background-color: #ccc;
+			position: absolute;
+			bottom: 1px;
+		}
+		.main_mid .artical a {
+			display: block;
+			width: 100px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			color: #fff;
+			background-color: green;
+			position: absolute;
+			bottom: 1px;
+			left: 100px;
+		}
+
+
+
+
+			@media screen and (max-width: 500px){
+
+			.w {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.w2 {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.top ul  {
+				display: none;
+			}
+			.top .menu {
+			position: absolute;
+			left: 80%;
+			top: 40px;
+			
+			}
+			.main_mid img {
+				width: 94%;
+				padding:  0 3%;
+			}
+			.main_mid .artical {
+				width: 94%;
+			}
+	}
+
+	</style>
+
+	<script src="index.js"></script>
+</head>
+<body>
+
+
+	<div class="mask" id="mask"></div>
+	<div class="menuAll" id="menuAll">
+		<div class="menuAll_l">
+			<ul >
+				<li><a href="index.html">关于九牧</a></li>
+				<li><a href="news.html">新闻资讯</a></li>
+				<li><a href="#">九牧产品</a></li>
+				<li><a href="#">加盟九牧</a></li>
+				<li><a href="#">媒体报道</a></li>
+				<li><a href="#">联系九牧</a></li>
+			</ul>
+		</div>
+		<div class="menuAll_r">
+			<ul >
+				<li><a href="#">九牧简介</a></li>
+				<li><a href="#">九牧介绍</a></li>
+				<li><a href="#">九牧详情</a></li>
+			</ul>
+			<ul >
+				<li><a href="#">九牧简介</a></li>
+				<li><a href="#">九牧介绍</a></li>
+				<li><a href="#">九牧详情</a></li>
+			</ul>
+			<ul >
+				<li><a href="#">九牧简介</a></li>
+				<li><a href="#">九牧介绍</a></li>
+				<li><a href="#">九牧详情</a></li>
+			</ul>
+			<ul >
+				<li><a href="#">九牧简介</a></li>
+				<li><a href="#">九牧介绍</a></li>
+				<li><a href="#">九牧详情</a></li>
+			</ul>
+			<ul >
+				<li><a href="#">九牧简介</a></li>
+				<li><a href="#">九牧介绍</a></li>
+				<li><a href="#">九牧详情</a></li>
+			</ul>
+			<ul >
+				<li><a href="#">九牧简介</a></li>
+				<li><a href="#">九牧介绍</a></li>
+				<li><a href="#">九牧详情</a></li>
+			</ul>
+		</div>
+		
+
+	</div>
+<div class="top">
+		<div class="w">
+			<div class="logo">
+				<img src="images/logo.png" height="45" width="224" alt="">
+			</div>
+			<ul>
+				<li class="li1"><a href="index.html">关于九牧<br>AABOUT</a>
+					<ul>
+						<li><a href="#">九牧简介</a></li>
+						<li><a href="#">九牧介绍</a></li>
+						<li><a href="#">九牧详情</a></li>
+					</ul>
+				</li>
+
+				<li><a href="news.html">新闻资讯<br>NEWS</a>
+					<ul>
+						<li><a href="#">九牧简介</a></li>
+						<li><a href="#">九牧介绍</a></li>
+						<li><a href="#">九牧详情</a></li>
+					</ul>
+				</li>
+				<li><a href="#">九牧产品<br>PRODUCT</a>
+					<ul>
+						<li><a href="#">九牧简介</a></li>
+						<li><a href="#">九牧介绍</a></li>
+						<li><a href="#">九牧详情</a></li>
+					</ul>
+				</li>
+				<li><a href="#">加盟九牧<br>JOIN</a>
+					<ul>
+						<li><a href="#">九牧简介</a></li>
+						<li><a href="#">九牧介绍</a></li>
+						<li><a href="#">九牧详情</a></li>
+					</ul>
+				</li>
+				<li><a href="#">媒体报道<br>MEDUAL</a>
+					<ul>
+						<li><a href="#">九牧简介</a></li>
+						<li><a href="#">九牧介绍</a></li>
+						<li><a href="#">九牧详情</a></li>
+					</ul>
+				</li>
+				<li><a href="#">联系我们<br>CONTACT</a>
+					<ul>
+						<li><a href="#">九牧简介</a></li>
+						<li><a href="#">九牧介绍</a></li>
+						<li><a href="#">九牧详情</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="menu">
+				<button id="button">菜单</button>
+			</div> 
+		</div>
+	</div>
+<!-- 头部结束 -->
+
+
+<!-- 主体开始 -->
+	<div class="banner">
+		<img src="images/banner1.jpg"  alt="">
+	</div>
+
+<div class="w">
+	<div class="main">
+		<div class="main_title">
+		<br>
+
+			<hr>
+			<span>新闻资讯<br>
+					NEWS
+			</span>
+		</div>
+		<div class="main_mid">
+			<img src="images/new1.jpg" height="389" width="700" alt="">
+			<div class="artical">
+				<h4>九牧关爱老人健康，走进临淄县敬老院</h4>
+				<p>1月15日下午，九牧携手湖南临淄县慈善总会捐款价值近30万的卫浴产品，用于改善老人如厕环境，将关爱送至湖南临淄县敬老院</p>
+				<span>2015-01-02</span>
+				<a href="#">阅读详细</a>
+			</div>
+		</div>
+
+		<div class="main_mid">
+			<img src="images/new1.jpg" height="389" width="700" alt="">
+			<div class="artical">
+				<h4>九牧关爱老人健康，走进临淄县敬老院</h4>
+				<p>1月15日下午，九牧携手湖南临淄县慈善总会捐款价值近30万的卫浴产品，用于改善老人如厕环境，将关爱送至湖南临淄县敬老院</p>
+				<span>2015-01-02</span>
+				<a href="#">阅读详细</a>
+			</div>
+		</div>
+
+		<div class="main_mid">
+			<img src="images/new1.jpg" height="389" width="700" alt="">
+			<div class="artical">
+				<h4>九牧关爱老人健康，走进临淄县敬老院</h4>
+				<p>1月15日下午，九牧携手湖南临淄县慈善总会捐款价值近30万的卫浴产品，用于改善老人如厕环境，将关爱送至湖南临淄县敬老院</p>
+				<span>2015-01-02</span>
+				<a href="#">阅读详细</a>
+			</div>
+		</div>
+		<div class="main_mid">
+			<img src="images/new1.jpg" height="389" width="700" alt="">
+			<div class="artical">
+				<h4>九牧关爱老人健康，走进临淄县敬老院</h4>
+				<p>1月15日下午，九牧携手湖南临淄县慈善总会捐款价值近30万的卫浴产品，用于改善老人如厕环境，将关爱送至湖南临淄县敬老院</p>
+				<span>2015-01-02</span>
+				<a href="#">阅读详细</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="w">
+		<div class="footer_l">
+			<ul>
+				<li><a href="#">关于九牧</a></li>
+				<li><a href="#">新闻中心</a></li>
+				<li><a href="#">加盟九牧</a></li>
+				<li><a href="#">九牧产品</a></li>
+				<li><a href="#">媒体报道</a></li>
+				<li class="nobod"><a href="#">联系我们</a></li>
+				
+			</ul>
+
+
+			<span>版权所有：九牧厨卫股份有限公司所有 @2015闽ICP备110010904号
+			<br>
+			电话：400-000-40028 更多模板：源码之家 技术支持：政维嘉楠</span>
+			<br>
+			<br>
+			
+		</div>
+		<div class="footre_r">
+			<img src="images/f_logo.png" height="45" width="224" alt="">
+		</div>
+
+	</div>
+</div>
+
+	
+</body>
+</html>

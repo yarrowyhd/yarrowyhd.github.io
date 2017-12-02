@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<!-- <script>
+
+	window.onload=function () {
+        //分数的id
+        var score = document.getElementById("score");
+        //初始化分数为0
+        var scoreNum = 0;
+
+        //第一步：创建表格
+
+        document.write("<table cellspacing='0' border='1' width='900' height='500' >");
+        for (var n = 0; n < 25; n++) {
+            document.write("<tr >");
+            for (var m = 0; m < 45; m++) {
+                document.write("<td></td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+
+    }
+</script> -->
+
+<body>
+	 <div class="container" id="container">
+
+		
+	</div>
+	<div class="score">
+		
+		<input type="button" value="暂停" onclick="speed('1000')" id="stop">
+		<input type="button" value="重新开始" onclick="speed('1000')" id="reset">
+		
+
+		<h3 id="game">本轮成绩为:<span id="score"></span></h3>
+	</div>
+	
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

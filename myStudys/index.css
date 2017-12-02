@@ -1,0 +1,143 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.w {
+	width: 1210px;
+	margin:0 auto;
+}
+li {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+}
+body {
+	width:100%;
+	height:100%;
+	background:url('images/bg-01.jpg') no-repeat ;
+	background-position: cover;
+
+}
+.header {
+	width:100%;
+	height: 60px;
+	// background-color: #ccc;
+}
+.main {
+	position: relative;
+
+}
+.main .yhdLogal {
+	position:absolute;
+	top: 40px;
+	left:50%;
+	margin-left: -45px;
+	width: 90px;
+	height: 80px;
+}
+.main .yhdLogal img {
+	width:100%;
+	height:100%;
+}
+.main .yhdAbout {
+	width: 400px;
+	height: 200px;
+	position:absolute;
+	top:140px;
+	left:50%;
+	margin-left: -200px;
+	// border: 1px solid #333;
+	color:#fff;
+	text-align: center;
+	font-size: 18px;
+	line-height: 38px;
+}
+
+
+#list {
+    width: 100%;
+    margin: 50px 200px;
+}
+#list .t-li {
+	float:left;
+    width: 180px;
+    // height: 40px;
+    margin-left: 20px;
+}
+
+#list .top .t:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    width: 0;
+    height 0;
+    border-right: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 14px solid transparent;
+    border-top: 18px solid #8EF491;
+}
+
+#list .top .t-title {
+   display:block;
+   background-color:#eaeaea;
+    text-align:center;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: default;
+    color:#333;
+}
+#list .bottom {
+    margin-top: 30px;
+    margin-left: 10px;
+    display: none;
+}
+#list .bottom li {
+    position: relative;
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 20px;
+}
+
+#list .bottom li:hover a{
+    text-decoration: underline;
+    color: #ee3b3b;
+    transition: 0.3s;
+}
+.footer {
+
+	position:relative;
+	color:#fff;
+	
+}
+.footerShow {
+    position: absolute;
+   	top:360px;
+    left: 150px;
+}
+.footerShow ul li{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: #666;
+}
+.footerShow ul li:last-child{
+    margin-right: 0;
+}
+.footerShow li img {
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+    margin-top: 20%;
+}
+.footerPay {
+	position:absolute;
+	font-size:22px;
+	right:50px;
+	top:400px;
+}

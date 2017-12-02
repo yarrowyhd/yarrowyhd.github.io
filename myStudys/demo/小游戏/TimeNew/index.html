@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time</title>
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+    <div class="timeCard">
+        <h1>小 日 子</h1>
+        <aside>    
+            <div class="year"> 
+                <select id="selectYear">
+                    <option selected="selected" >2017</option>
+                    <option >2016</option>
+                    <option >2015</option>
+                    <option >2014</option>
+                    <option >2013</option>
+                    <option >2012</option>
+                    <option >2011</option>
+                    <option >2010</option>
+                    <option >2009</option>
+                </select>
+            
+               <button id="backToday">回到今天</button>
+            </div>
+            
+            <div class="month" id="month">
+                <table>
+                    <tbody id="monthTable">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="schedule" id="schedule">
+                <h4>您的行程列表</h4>
+                <button id="addSchedule">添加日程</button>
+                <div id="dateInfo">2016-04-08</div>
+                <div id="weekInfo">星期五</div>
+                <div id="dateNum" class="dateNum">8</div>
+                <ul>
+
+
+                </ul>
+            </div>
+       </aside>
+        <div class="calendar">
+
+            <div class="calendarTop">
+                <span id="firstapan">日</span>
+                <span>一</span>
+                <span>二</span>
+                <span>三</span>
+                <span>四</span>
+                <span>五</span>
+                <span>六</span>
+            </div>
+            <table id="calendartable">
+                <tbody id="calendarTable" >
+
+                </tbody>
+
+              
+            </table>
+        </div>
+        <div class="scheduleModel" id="scheduleModel">
+            <h3>请输入您的行程</h3>
+            <div class="scheduleModelText" id="scheduleModelText">
+               <textarea cols="25" rows="18"></textarea>
+            </div>
+            <button>确定</button>
+            <button>重置</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>By:YangHongDan | Contact information: <a href="mailto:yarrowyang@163.com">yarrowyang@163.com</a></p>
+        <p>把握时间，营造自己的美好未来</p>
+    </footer>
+
+   <script src="js/index.js"></script>
+</body>
+ 
+</html>
+

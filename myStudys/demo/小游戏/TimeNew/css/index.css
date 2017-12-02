@@ -1,0 +1,179 @@
+body,html,ul,li,h1,h2,h3,h4,h5,h6,div,dl,dd {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+body {
+    width: 100%;
+}
+.timeCard {
+    width: 1200px;
+    height: 500px;
+    margin: 20px auto;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.timeCard aside {
+    float:left;
+    width:20%;
+    height:550px;
+    text-align:center;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+.timeCard aside .year{
+    width:100%;
+    margin-top: 20px;
+}
+.timeCard aside .month{
+    margin: 20px;
+    width:80%;
+    overflow: hidden;
+}
+
+.timeCard aside .month #monthTable tr{
+    width:50px;
+    height: 30px;
+    border: 1px solid #333; 
+    font-weight: bold;
+    background-color: lightblue;
+    border-top: 0;
+    border-left: 0;
+
+}
+.timeCard aside .month #monthTable tr td:hover{
+    text-decoration: underline;
+    background-color: #ffd2d2;
+}
+/*.timeCard aside .month li.active{
+    background-color: red;
+    color:#fff;
+}
+*/
+.timeCard .schedule {
+    position:relative;
+    margin:0 auto;
+    margin-top:10px;
+    width: 70%;
+    height: 250px;
+    border:solid 1px #ccc;
+    border-radius: 20px;
+
+}
+.timeCard .schedule button{
+    /*width: 24px;*/
+    height: 24px;
+    /*position:absolute;*/
+    margin: 10px 0;
+    border-radius: 8px;
+    /*background-image: url(../image/addhei.png);*/
+    background-size: 26px 26px;
+}
+
+.calendar {
+    float:right;
+    width:76%;
+    height: 545px;
+    border: 1px solid #333;
+    display:table-cell;
+
+}
+.calendar .calendarTop {
+    width:100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    background-color: #ccc;
+
+}
+.calendar .calendarTop span{
+    width:14.06%;
+    display:block;
+    /*margin-left: 5px;*/
+    height: 50px;
+    text-align:center;
+    line-height: 50px;
+    float:left;
+    border: solid 1px #eee;
+    font-weight: 700;
+
+}
+.calendar table {
+    margin-top:5px;
+}
+.calendar table tr {
+    border-bottom-color:#000;
+    position:relative;
+    left:0;
+    text-align:center;
+    margin-bottom:1px;
+    background-color:#B0E0E6;
+    border:1px;
+    height: 80px;
+}
+
+.otherTd {
+    background-color: #B0E0E6;
+}
+.todayMonth{
+    background-color: #ff9797;
+}
+.date {
+    background-color:#B0E0E6;
+}
+.null {
+    background-color: #d1e9e9;
+}
+
+.dateNum {
+    font-size: xx-large;
+    color: #e25c38;
+}
+.calendar table tr td:hover {
+    text-decoration: underline;
+    background-color: #ffd2d2;
+}
+.date:hover {
+    text-decoration: underline;
+}
+
+table {
+    border:1px;
+    width:100%;
+}
+
+
+
+.scheduleModel {
+    position:fixed;
+    width: 300px;
+    height: 430px;
+    text-align:center;
+    background-color:#ccc;
+    top: 100px;
+    left:50%;
+    margin-left:-150px;
+    display:none;
+}
+.scheduleModel h3 {
+    margin-top:20px;
+}
+.scheduleModel .scheduleModelText {
+    margin-top:20px;
+}
+.scheduleModel button {
+    margin-top:20px;
+}
+footer{
+    text-align: center;
+    margin-top: 130px;
+    font-weight: bold;
+}
+@media screen and (max-width: 700px){
+    .timeCard {
+        display: inline;
+    }
+}

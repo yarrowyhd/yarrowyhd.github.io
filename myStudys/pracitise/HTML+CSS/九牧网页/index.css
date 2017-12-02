@@ -1,0 +1,424 @@
+/*
+* @Author: 杨七喜
+* @Date:   2017-09-13 14:21:32
+* @Last Modified by:   杨七喜
+* @Last Modified time: 2017-09-14 13:52:40
+*/
+
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html {
+			width: 100%;
+			height: 100%;
+		}
+		ul {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+		}
+		.w {
+			width: 1000px;
+			margin: 0 auto;
+			
+		}
+		.w2 {
+			width: 900px;
+			margin: 0 auto;
+		}
+		.mask {	
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			position: fixed;
+			z-index: 111;
+			display: none;
+		}
+		.menuAll {
+			width: 100%;
+			height: 520px;
+			background-color: pink;
+			display: none;
+			position: fixed;
+			top: 30px;
+			left: 0;
+			z-index: 111111;
+		}
+		
+		.menuAll_l {
+			float: left;
+			width: 37%;
+			
+		}
+		.menuAll_l a {
+			color: #fff;
+			font-size: 20px;
+		}
+		.menuAll_l ul {
+			border-right: 6px solid #666;
+			margin-right: 3%;
+		}
+		.menuAll_l li {
+			padding: 30px 10px;
+		}
+		
+		.menuAll_l li:hover {
+			background-color: #ccc;
+		}
+		
+		.menuAll_r {
+			float: right;
+			width: 60%;
+		}
+
+		.menuAll_r li {
+			float: left;
+			padding: 33px 2px;
+		}
+		.menuAll_r a {
+			color: #fff;
+		}
+
+		.top {
+			width: 100%;
+			height: 100px;
+			position: relative;
+			background-color: #fff;
+		}
+		.logo {
+			float: left;
+			padding-top: 30px;
+		}
+		.top ul {
+			float: right;
+			
+		}
+		.top a {
+			color: #000;
+		}
+		.top ul li {
+			float: left;
+			height: 68px;
+			width: 100px;
+			padding-top: 30px;
+			overflow: hidden;
+			text-align: center;	
+
+		}
+
+		.li1 {
+			background-color: #ccc;
+			border-bottom: 2px solid #000;
+		}
+		.top ul li:hover {
+			background-color: #ccc;
+			border-bottom: 2px solid #000;
+			overflow: visible;
+		}
+		.top ul li ul {
+			margin-top: 28px;
+			perspective:500px;
+
+		}
+		.top ul li ul li {
+			padding: 0;
+			height: 30px;
+			background-color: #666;
+			transform: rotateY(90deg);
+
+		}
+		.top ul li ul 
+		li:nth-of-type(1) {
+
+			transition: all 1s;
+		}
+		.top ul li:hover>ul
+		li:nth-of-type(1) {
+			transform: none;
+
+		}
+		.top ul li ul 
+		li:nth-of-type(2) {
+
+			transition: all 1.5s;
+		}
+		.top ul li:hover>ul
+		li:nth-of-type(2) {
+			transform: none;
+
+		}
+		.top ul li ul 
+		li:nth-of-type(3) {
+
+			transition: all 2s;
+		}
+		.top ul li:hover>ul
+		li:nth-of-type(3) {
+			transform: none;
+
+		}
+		.top .menu {
+			position: absolute;
+			left: 500px;
+			top: 40px;
+			
+		}
+		.banner img {
+			width: 100%;
+		}
+		.produce h1 {
+			width: 100%;
+			text-align: center;
+			
+		}
+		.produce span {
+			margin-top: 20px;
+			display: block;
+			text-align: center;
+		}
+		.produce .type {
+			margin-top: 20px;
+			border-top: 1px solid #ccc;
+			height: 40px;
+			border-bottom: 1px solid #ccc;
+			
+		}
+		.produce .type li {
+			float: left;
+			padding: 5px 30px;
+			line-height: 30px;
+			border-left: 1px solid #ccc;
+
+		}
+		.produce .type .lil {
+			border-left: 0;
+		}
+		.produce .type a {
+			text-decoration: none;
+			color: #000;
+			transition: all 3s;
+		}
+		.produce .type a:hover {
+			color: green;
+		}
+		.products {
+			margin-top: 30px;
+			width: 100%;
+
+			overflow: hidden;
+			
+		}
+		.pictures {
+			position: relative;
+			width: 30%;
+			height: 400px;
+			float: left;
+			margin-right: 5%;
+			background-color: #ccc;
+			
+			
+		}
+		.products .nomar {
+			margin-right: 0;
+		}
+		.pictures img {
+			position: absolute;
+			top: 5px;
+			left: 50%;
+			margin-left: -48%;
+			width: 96%;
+			height:97%; 
+			z-index: 10;
+			transition: all 1s;
+
+		}
+		.pictures:hover img {
+			transform: scale(0.5);
+		}
+		.products .font {
+			background-color: #999;
+			position: absolute;
+			top: 5px;
+			left: 50%;
+			margin-left: -48%;
+			width: 96%;
+			height:92%;
+			opacity: 0;
+			color: #fff;
+			text-align: center;
+			padding-top: 20px;
+			transform: scale(0.5);
+			transition: all 1s; 
+			
+		}
+		.pictures:hover .font {
+			opacity: 1;
+			transform: scale(1);
+
+		}
+		.news{
+			width: 100%;
+			margin-top: 30px;
+			padding-top: 30px;
+		}
+		.news_title h1,
+		.about_title h1 {
+			
+			text-align: center;
+			color: #999;
+		}
+		.news_title span,
+		.about_title span {
+
+			display: block;
+			text-align: center;
+			line-height: 30px;
+		}
+		.news_title .span1, 
+		.about_title .span1 {
+			color: #aaa;
+		}
+		.news_img {
+			width: 100%;
+			margin-top: 30px;
+			overflow: hidden;
+		}
+		.news_img ul {
+			height: 330px;
+		}
+		.news_img li {
+			width: 22%;
+			float: left;
+			margin-right: 4%;
+		}
+		.news_img img {
+			width: 100%;
+			transition: all 1s;
+		}
+		.news_img .nomar {
+			margin-right: 0;
+		}
+		.news_img li p {
+			text-indent: 2em;
+			line-height: 24px;
+		}
+		.news_img li a {
+			display: block;
+			text-align: center;
+			padding: 10px 0;
+		}
+		.news_img .images {
+			width: 100%;
+			height: 130px;
+			overflow: hidden;
+			
+		}
+		.news_img ul li:hover img {
+			transform: scale(1.2);
+		}
+		.news_img ul li:hover {
+			border-bottom: 3px solid #999;
+		}
+		.about {
+			width: 100%;
+			overflow: hidden;
+		}
+		.about_content {
+			width: 100%;
+			padding-top: 30px;
+		}
+		.about_content img {
+			float: left;
+			width: 40%;
+			margin-right: 3%;
+		}
+		.about_content p {
+			float: left;
+			width: 57%;
+			padding-top: 30px;
+			line-height: 28px;
+			text-indent: 2em;
+		}
+		.footer {
+			width: 100%;
+			overflow: hidden;
+			margin-top: 30px;
+			background-color: #000;
+		}
+		.footer_l {
+			float: left;
+		}
+		.footer_l ul {
+			padding-top: 20px;
+			margin-bottom: 30px;
+		}
+		.footer_l li {
+			float: left;
+			padding: 0 10px;
+			border-right: 2px solid #ccc;
+		}
+		.footer_l .nobod {
+			border-right: 0;
+		}
+		.footer_l a {
+			color: #fff;
+			font-size: 14px;
+
+		}
+		.footer_l span {
+			color: #fff;
+			font-size: 14px;
+
+		}
+		.footre_r {
+			float: right;
+			padding-top: 30px;
+		}
+
+
+
+		@media screen and (max-width: 500px){
+
+			.w {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.w2 {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.top ul  {
+				display: none;
+			}
+			.top .menu {
+			position: absolute;
+			left: 80%;
+			top: 40px;
+			
+		}
+			
+			.news_img ul li {
+				width: 100%;
+			}
+
+			.products .pictures {
+				width: 100%;
+			}
+
+			.about_content img {
+				width: 100%;
+			}
+			.about_content p {
+				width: 100%;
+			}
+
+			.footre_r img {
+				padding-right:80px;
+			}
+		}
+	

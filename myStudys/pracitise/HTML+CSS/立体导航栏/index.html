@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            width: 900px;
+            list-style: none;
+            margin: 100px auto;
+
+        }
+        li {
+            width: 180px;
+            height: 60px;
+            float: left;
+
+        }
+        li span {
+            float: left;
+        }
+        .left {
+            width: 30px;
+            height: 60px;
+            background-color: #ccc;
+            transform-origin: left;
+        }
+        li:hover .left {
+
+            transform: skewY(-30deg);
+        }
+        .center {
+            width: 120px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            background-color: #ccc;
+
+
+        }
+        li:hover .center{
+            transform: translateY(-18px);
+            text-shadow: 5px 5px 3px #333;
+            box-shadow: 0 15px 20px -4px #333;
+        }
+        .right {
+            width: 30px;
+            height: 60px;
+            background-color: #ccc;
+            transform-origin: right;
+        }
+        li:hover .right {
+
+            transform: skewY(30deg);
+        }
+        ul::before,ul::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 60px;
+            float: left;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span class="left"></span>
+            <span class="center">web前端</span>
+            <span class="right"></span>
+        </li>
+
+        <li>
+            <span class="left"></span>
+            <span class="center">web前端</span>
+            <span class="right"></span>
+        </li>
+
+        <li>
+            <span class="left"></span>
+            <span class="center">web前端</span>
+            <span class="right"></span>
+        </li>
+
+        <li>
+            <span class="left"></span>
+            <span class="center">web前端</span>
+            <span class="right"></span>
+        </li>
+
+    </ul>
+
+
+</body>
+</html>

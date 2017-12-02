@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+	    body{
+	    	/*margin-left:auto;*//
+			margin-right:auto;
+	        font-size:9px;
+			background:lightblue;
+	    }
+		table{margin:50px auto 10px auto; overflow:hidden; border-collapse:collapse; }
+		td {width:20px; height:20px; border:1px solid #ccc; background:#f4f4f4}
+		input{width:80px; height:30px; margin-left:10px;}
+		#operate{margin-left:650px; font-size:20px;}
+	    #operate span{color:white;}
+	</style>
+	
+	<script type="text/javascript">
+		
+		/**
+		 * 得到页面的id为某值得对象
+		 */
+		function getId(id){
+			return document.getElementById(id);
+		}
+
+		var tables=null;
+		var bodys=[];
+		var direction=0;
+		var timer=null;
+		var speed=250;
+		var paused=true;
+		var rowCount=25;
+		var colCount=25;
+		var core=0;
+
+		function init() {
+			tables = getId("main");
+			// alert(tables);
+
+			//产生table
+			for(var row=0;row<rowCount;row++) {
+                // insertRow(index)在表格指定位置插入一个新行
+				 var tr=tables.insertRow(0); //默认值为 -1 ，插入单元格到 rows 集合内的最后一个
+                for(var col=0;col<colCount;col++) {
+                    // insertCell() 方法用于在 HTML 表的一行的指定位置插入一个空的 <td> 元素。
+                    var td=tr.insertCell(0);
+                }
+			}
+
+			//产生食物
+			for(var i=0; i<1; i++){
+                // 不能向上取整，25,25不存在
+                x = Math.floor(Math.random()*colCount);
+                y = Math.floor(Math.random()*rowCount);
+                
+                // console.log(x);
+                // console.log(y);
+               
+                if(isNotCellFilled(x,y)){
+                    // rows 集合返回表格中所有行（TableRow 对象）的一个数组，即一个 HTMLCollection。该集合包括 <thead>、<tfoot> 和 <tbody> 中定义的所有行。
+                    // cells 集合返回表格中所有 <td> 或 <th> 元素。
+                    tables.rows[y].cells[x].style.backgroundColor = '#009933';
+                }
+            }
+
+            //产生蛇头
+            while(true){
+                //每次从6、6的位置开始
+                x=6;
+                y=6;
+                if(isNotCellFilled(x,y)){
+                    tables.rows[y].cells[x].style.backgroundColor = "#3399CC";
+                    // push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+                    bodys.push({x:x,y:y,color:'black'});
+                    break;
+                }
+            }
+
+
+            direction = 2;
+            paused = true;//设置开始
+            //添加键盘事件
+            document.onkeydown= function(e){
+				e = e || window.event;	
+                switch(e.keyCode){
+                	case 13: {
+                			if(paused){
+                					move();
+                					paused = false;
+                			}
+                			else{
+                				  //如果没有暂停，则停止移动
+                					pause();
+                					paused = true;
+                			}
+                			break;
+                		}
+                    case 37:{//left
+                        //阻止蛇倒退走（向左走时不能向右走，否则会撞到自己，死亡）
+                        if(direction==1){
+                            break;
+                        }
+                        direction = 3;
+                        break;
+                    }
+                    case 38:{//up
+                    	  
+                        if(direction==2){//阻止蛇倒退走
+                            break;
+                        }
+                        direction = 0;
+                        break;
+                    }
+                    case 39:{//right
+                        if(direction==3){//阻止蛇倒退走
+                            break;
+                        }
+                        direction = 1;
+                        break;
+                    }
+                    case 40:{//down
+                    		
+                        if(direction==0){//阻止蛇倒退走
+                            break;
+                        }
+                        direction = 2;
+                        // alert("faf");
+                        break;
+                    }
+                }
+            }
+
+		}
+
+		/**
+		 * 用来判断 表格某位置是否 被填充
+		 * @return 没有返回true
+		 */
+		function isNotCellFilled(x,y) {
+			if(tables.rows[y].cells[x].style.backgroundColor=="") {
+				return true;
+			}
+			return false;
+		}
+
+		function move() {
+			getId("btn").value="暂停";
+			timer = setInterval(function(){
+                erase();
+                moveOneStep();
+                paint();
+				getId("core").value = core;
+            }, speed);
+		}
+
+		function moveOneStep() {
+			if(checkNextStep()==-1){
+                clearInterval(timer);
+                alert("Game Over");
+                return;
+            }
+            if(checkNextStep()==1){
+                var _point = getNextPos();
+                var _x = _point.x;
+                var _y = _point.y;
+                var _color = 'red';
+				core += 10;
+                bodys.unshift({x:_x,y:_y,color:_color});
+              	
+				
+                generateDood();   //因为吃了一个食物，所以再产生一个食物
+                return;
+            }
+            var point = getNextPos();
+          
+            var color = '#3399CC';
+           
+            //蛇尾减一节， 蛇头加一节，呈现蛇前进的效果
+            bodys.pop();
+            bodys.unshift({x:point.x,y:point.y,color:color});
+		}
+
+		function checkNextStep() {
+			var point = getNextPos();
+            var x = point.x;
+            var y = point.y;
+            if(x<0 || x>=colCount || y<0 || y>=rowCount){
+                return -1;//触边界，游戏结束
+            }
+            for(var i=0; i<bodys.length; i++){
+                if(bodys[i].x==x && bodys[i].y==y){
+                    return -1;//碰到自己的身体,游戏结束
+                }
+            }
+            if(!isNotCellFilled(x,y)){
+                return 1;//有东西
+            }
+            return 0;//空地
+		}
+
+		function getNextPos() {
+			var x = bodys[0].x;
+            // alert(x);
+            var y = bodys[0].y;
+   
+            //向上
+            if(direction==0){
+                y--;
+            }
+            //向右
+            else if(direction==1){
+                x++;
+            }
+            //向下
+            else if(direction==2){
+                y++;
+            }
+            //向左
+            else{
+                x--;
+            }
+            //返回一个坐标
+            return {x:x,y:y};
+		}
+
+		function erase() {
+			for(var i=0; i<bodys.length; i++){
+                // this.eraseDot(this.body[i].x, this.body[i].y);
+                // 删除一节
+                var m=bodys[i].x;
+                var n=bodys[i].y;
+                tables.rows[n].cells[m].style.backgroundColor = "";
+            }
+		}
+
+		function paint() {
+			for(var i=0; i<bodys.length; i++){
+                var m=bodys[i].x;
+                var n=bodys[i].y;
+                tables.rows[n].cells[m].style.backgroundColor = '#3399CC';
+            }
+		}
+
+		function pause() {
+			getId("btn").value="开始";
+			clearInterval(timer);
+        	paint();
+		}
+
+		function restart() {
+			if(timer){
+                clearInterval(timer);
+            }
+            for(var i=0; i<rowCount;i++){
+                // deleteRow() 方法用于从表格删除指定位置的行。
+            		tables.deleteRow(0);
+            }
+            bodys = [];
+            init();
+            speed = 250;
+		}
+
+		function generateDood() {
+			var x = Math.floor(Math.random()*colCount);
+            var y = Math.floor(Math.random()*rowCount);
+            var color = '#009933';
+			while (true) {
+				if (isNotCellFilled(x, y)) {
+					tables.rows[y].cells[x].style.backgroundColor = color;
+					break;
+				}
+				x = Math.floor(Math.random()*colCount);
+            	y = Math.floor(Math.random()*rowCount);
+			}
+		}
+	</script>
+
+</head>
+<body onload="init()">
+	<div id="pannel">
+		<table id="main" border="1" cellspacing="0" cellpadding="0">
+		</table>
+		<div id="operate">
+			<input type="button" id="btn" value="开始" />
+			<input type="button" id="reset" value="重新开始" />
+			<span>当前分数：<input type="text" id="core" value=0 readonly="readonly" /></span>
+			     
+		<div>
+	</div>
+
+	<script>
+		getId('btn').onclick = function(){
+				if(paused){
+						move();
+						paused = false;
+				}
+				else{
+						pause();
+						paused = true;
+				}
+		};
+		getId("reset").onclick = function(){
+				restart();
+				blur();
+		};
+		
+</script>
+</body>
+</html>
