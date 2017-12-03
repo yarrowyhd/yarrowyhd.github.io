@@ -93,7 +93,7 @@ var Data = [
         href: "pracitise/mobile/仿京东移动站/index.html"
       },
       {
-        title: "用bootstrap仿网页",
+        title: "bootstrap网页",
         href: "pracitise/mobile/用bootstrap仿网页/index.html"
       }
     ],
