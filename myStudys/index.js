@@ -83,10 +83,10 @@ var Data = [
     ],
   },
   /* 
-  * mobile 学习
+  * 移动web 学习
   */
   {
-    title: "mobile 学习",
+    title: "移动web学习",
     children: [
       {
         title: "仿京东移动站",
