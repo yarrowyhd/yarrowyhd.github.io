@@ -39,6 +39,10 @@ var Data = [
         href: "pracitise/HTML+CSS/立方体/index.html"
       },
       {
+        title: "购物车（web Storage）",
+        href: "pracitise/HTML+CSS/webStorage/购物车/login.html"
+      },
+      {
         title: "钟表",
         href: "pracitise/HTML+CSS/钟表/index.html"
       }
